@@ -16,8 +16,8 @@ def turn_down(): # 아래쪽 화살키
 def fire():
     ang = t.heading()
     while t.ycor() > 0: # y좌표가 0보다 크면 - 포탄이 땅 위에 있는 동안
-        t.forward(15)
-        t.right(5)
+        t.forward(18)
+        t.right(7)
 
     d = t.distance(target, 0)  # 거북이와 목표 지점과의 거리
     #t.write(d)

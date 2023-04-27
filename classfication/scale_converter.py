@@ -8,7 +8,7 @@ class ScaleConverter:
         self.factor = factor
 
     def convert(self, value):
-        return value * self.factor
+        return value * self.factor  # 값 x 단위요소
 if __name__=="__main__":
     con = ScaleConverter("inches", "mm", 25)
     print("Converting 2 inches")  # 2인치 변환하기

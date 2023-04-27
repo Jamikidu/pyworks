@@ -14,6 +14,7 @@ cart.insert(1, '양파')
 # 리스트의 개수
 print(len(cart))
 
+
 # 리스트 수정
 cart[2] = '커피'
 

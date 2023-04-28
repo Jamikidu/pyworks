@@ -4,17 +4,18 @@
 # 함수 안에 멤버 변수를 작성
 # 외부에서는 함수에 접근
 class Counter:
-    x = 0
+
 
     def __init__(self):
-        Counter.x += 1  #클래스 변수이므로 클래스로 직접 접근
+        self.x = 0  # 인스턴스 변수
+        self.x += 1  #클래스 변수이므로 클래스로 직접 접근
 
     def get_count(self):
-        return Counter.x
+        return self.x
 
 
 c1 = Counter()
-# print(c1.x)  #멤버변수에 접근하지 않음
+print(c1.x)
 print(c1.get_count())  #1
 
 c2 = Counter()

@@ -13,7 +13,7 @@ f.close()
 # kbo팀 파일에 기록
 try:
     team = ['키움', '삼성', '롯데', '두산', '기아', 'SSG', 'LG', 'NC', '한화']
-    with open('./output/kbo2323.txt', 'w') as f:
+    with open('output/kbo2023.txt', 'w') as f:
         for i in team:
             if i == team[-1]: #team의 마지막 요소에 쉼표 생략
                 f.write(i)
@@ -26,7 +26,7 @@ except:
 
 # kbo2023.txt 읽기
 try:
-    with open('./output/kbo2323.txt', 'r') as f:
+    with open('output/kbo2023.txt', 'r') as f:
         team = f.read()
         print(team)
 except FileNotFoundError as e:

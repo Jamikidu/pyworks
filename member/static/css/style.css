@@ -31,4 +31,8 @@ nav{float:right; width: 70%; padding-top: 40px;}
 /* main 스타일 */
 #main{clear: both; margin: 90px auto;}
 #main .img1{margin: 20px auto; text-align:center;}
-#main .img1 img{border-radius: 10px;}
+#main .img1 img{border-radius: 10px; overflow: hidden;}
+#main .caption{width:590px; height:320px; background: rgba(0,0,0,0.5);
+             transition:all 0.6s;}
+#main .img1 img:hover .caption{transform:translateY(-324px)}
+#main .img1 .caption{line-height: 2em;}

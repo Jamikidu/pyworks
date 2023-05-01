@@ -9,5 +9,5 @@ def divide(x, y):
     finally:
         print("여기는 반드시 수행되는 구간입니다.")
 
-#divide(2, 4)
-divide(2, 0)
+divide(2, 4)
+divide(2, 0)  # 분모가 0인 경우 - 나눌 수가 없음

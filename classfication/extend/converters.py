@@ -14,10 +14,10 @@ class Converter(ScaleConverter):
         return super().convert(value) + self.offset
 
 
-
-conv = Converter('C', 'F', 1.8, 32)
-print("Converting 21C")
-print(f'{conv.convert(21):.2f}{conv.units_to}')
+if __name__=="__main__":
+    conv = Converter('C', 'F', 1.8, 32)
+    print("Converting 21C")
+    print(f'{conv.convert(21):.2f}{conv.units_to}')
 
 """
 con = ScaleConverter("KB", "B", 1024)

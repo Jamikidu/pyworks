@@ -2,7 +2,7 @@ import oracledb
 
 def getconn():
     conn = oracledb.connect(user='c##mydb', password='mydb',
-                            dsn='localhost:1521/xe')  #dsn - data source name
+                    dsn='localhost:1521/xe')  #dsn - data source name
     return conn
 
 

@@ -6,7 +6,7 @@ url = "https://finance.naver.com/marketindex/"
 response = requests.get(url)
 html = BeautifulSoup(response.text, 'html.parser')
 ul = html.find('ul', attrs={'class':'data_lst'})
-first_li = ul.find('li')
+first_li = ul.find('li')  # 미국 USD만 찾음
 
 #print(first_li)
 exchange = first_li.find('span', attrs={'class':'blind'})  # 환율의 종류

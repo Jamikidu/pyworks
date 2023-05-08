@@ -1,4 +1,4 @@
-class Student:
+class My_Student:
 
     def __init__(self, name, grade):
         self.name = name
@@ -10,11 +10,11 @@ class Student:
     def __str__(self):
         return "이름 : {}, 학년: {}".format(self.name, self.grade)
 
+if __name__== "__main__":
+    std1 = My_Student('김하나', 1)
+    #print(std1.name, std1.grade)
+    print(std1)
 
-std1 = Student('김하나', 1)
-#print(std1.name, std1.grade)
-print(std1)
-
-std2 = Student('박둘', 2)
-#print(std2.name, std2.grade)
-print(std2)
+    std2 = My_Student('박둘', 2)
+    #print(std2.name, std2.grade)
+    print(std2)

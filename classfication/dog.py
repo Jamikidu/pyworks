@@ -7,7 +7,7 @@ class Dog:
 
 dog1 = Dog("백구")
 print(dog1.name)
-#print(dog1.kind)
+#print(dog1.kind)   # 모든 dog 가 카인드라는 변수 공유
 print(Dog.kind)     # 클래스 이름으로 직접 접근
 
 dog2 = Dog("검둥이")

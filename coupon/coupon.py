@@ -14,10 +14,14 @@ def click():
         win = random.choice(namelist)
         if win not in winners:  # 중복제거
             winners.append(win)  # winners에 추가
+
     output.delete(0.0, END)
     # output.insert(END, winners) -> list 대신에 str로 출력 요망
-    for i in winners:
-        output.insert(END, i + " ")
+    # for i in winners:
+    #     output.insert(END, i + " ")
+
+    # 문자열 연결하기 - join()
+    output.insert(END, ' '.join(winners))
     print(winners)
     winners.clear()
 

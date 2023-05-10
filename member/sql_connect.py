@@ -1,11 +1,69 @@
 import sqlite3
 
+
+# board 테이블 연동
 def getconn():
     conn = sqlite3.connect("c:/green_project/sqlworks/pydb/memberdb.db")
     return conn
 
 print(getconn(), "연결 객체 생성됨")
+# board 테이블 연동
+# board 테이블 생성
+def create_board():
+    conn = getconn()
+    cursor = conn.cursor()
+    sql = """
+        CREATE TABLE board(
+            bno INTEGER PRIMARY KEY AUTOINCREMENT,
+            title TEXT NOT NULL,
+            content TEXT NOT NULL,
+            createdate DATETIME DEFAULT (datetime('now', 'localtime')),
+            hit INTEGER DEFAULT 0,
+            memberid TEXT NOT NULL,
+            FOREIGN KEY(memberid) REFERENCES member(memberid) ON DELETE CASCADE
+        )    
+    """
+    cursor.execute(sql)
+    conn.commit()
+    conn.close()
 
+def drop_board():
+    conn = getconn()
+    cursor = conn.cursor()
+    sql = "DROP TABLE board"
+    cursor.execute(sql)
+    conn.commit()
+    conn.close()
+
+def insert_board():
+    conn = getconn()
+    cursor = conn.cursor()
+    sql = "INSERT INTO board(title, content, memberid) VALUES(?, ?, ?)"
+    cursor.execute(sql, ('가입인사', '안녕하세요.. 유성길입니다', 'today123'))
+    conn.commit()
+    conn.close()
+
+
+def select_board():
+    conn = getconn()
+    cursor = conn.cursor()
+    sql = "SELECT * FROM board"
+    cursor.execute(sql)
+    boardlist = cursor.fetchall()
+    print(boardlist)
+    for board in boardlist:
+        print(board)
+    conn.commit()
+    conn.close()
+
+# 함수 호출
+# create_board()
+# insert_board()
+# drop_board()
+select_board()
+
+# member 테이블과 연동
+"""
 def select():
     conn = getconn()
     cursor = conn.cursor()
@@ -37,6 +95,4 @@ def select_one():
     print(rs)
     conn.close()
 
-#insert()
-select()
-#select_one()
+"""

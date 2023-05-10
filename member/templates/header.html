@@ -11,7 +11,7 @@
             </div>
             <nav>
                 <ul id="topMenu">
-                    {% if session %}
+                    {% if session['userid'] %}
 
                     <li><a href="#">회원</a>
                         <ul>
@@ -21,11 +21,11 @@
                     </li>
                     <li><a href="#">게시판</a>
                         <ul>
-                            <li><a href="">글목록</a></li>
-                            <li><a href="">글쓰기</a></li>
+                            <li><a href="{{ url_for('boardlist') }}">글목록</a></li>
+                            <li><a href="{{ url_for('writing') }}">글쓰기</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{ url_for('logout') }}">로그아웃</a></li>
+                    <li><a href="{{ url_for('logout') }}"><span class="session">({{ session['userid'] }}님)</span>로그아웃</a></li>
                     {% else %}
                     <li><a href="#">회원</a>
                         <ul>
@@ -35,8 +35,8 @@
                     </li>
                     <li><a href="#">게시판</a>
                         <ul>
-                            <li><a href="">글목록</a></li>
-                            <li><a href="">글쓰기</a></li>
+                            <li><a href="{{ url_for('boardlist') }}">글목록</a></li>
+                            <li><a href="{{ url_for('writing') }}">글쓰기</a></li>
                         </ul>
                     </li>
                     <li><a href="{{ url_for('login') }}">로그인</a></li>

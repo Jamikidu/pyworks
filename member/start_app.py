@@ -86,9 +86,37 @@ def login():
     else:
         return render_template('login.html')
 
+# 로그 아웃
 @app.route('/logout')
 def logout():
     session.clear()  #모든 세션 삭제
     return redirect(url_for('index'))
+
+# 게시판 목록
+@app.route('/boardlist', methods = ['GET'])
+def boardlist():
+    conn = getconn()
+    cursor = conn.cursor()
+    sql = "SELECT * FROM board"
+    cursor.execute(sql)
+    boardlist = cursor.fetchall()
+    # print(boardlist)
+    # for board in boardlist:
+    #     print(board)
+    conn.commit()
+    conn.close()
+    return render_template('boardlist.html', boardlist=boardlist)
+
+
+# 글쓰기
+@app.route('/writing')
+def writing():
+    return render_template('writing.html')
+
+
+    # ※예시※
+    # cart = "계란"
+    # carts = ['계란', '콩나물', '생수']
+    # return render_template('boardlist.html', cart=cart, cartlist=carts)
 
 app.run()

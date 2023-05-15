@@ -18,6 +18,7 @@ def create_board():
             title TEXT NOT NULL,
             content TEXT NOT NULL,
             createdate DATETIME DEFAULT (datetime('now', 'localtime')),
+            modifydate DATETIME,
             hit INTEGER DEFAULT 0,
             memberid TEXT NOT NULL,
             FOREIGN KEY(memberid) REFERENCES member(memberid) ON DELETE CASCADE
@@ -60,7 +61,7 @@ def select_board():
 # create_board()
 # insert_board()
 # drop_board()
-select_board()
+# select_board()
 
 # member 테이블과 연동
 """

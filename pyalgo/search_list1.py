@@ -17,7 +17,7 @@ def search_list2(a, x):
         if a[i] == x:
              same_num.append(i)
     # 리스트에 찾는 값이 없으면
-    if len(same_num) == 0:
+    if len(same_num) == 0:  # 또는 --> x not in a:
         # return -1
         return "값을 찾을 수 없습니다."
     else:

@@ -10,3 +10,4 @@ student = [
 print('***** 학생 명단 *****')
 for i in student:
     print(i)
+

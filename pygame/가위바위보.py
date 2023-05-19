@@ -32,6 +32,8 @@ def fight():
     else:
         print('결과 : 패')
 
+fight()
+
 """
 ※ 파이썬은 random.choice가 있어서 가능함 ※
 
@@ -41,4 +43,3 @@ com = 가위바위보[rnd]
 print("컴퓨터 :", com)
 """
 
-fight()

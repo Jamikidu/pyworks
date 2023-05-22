@@ -20,7 +20,7 @@ try:
         guess = int(input(f"예상되는 숫자를 입력하세요({min_v} ~ {max_v}) "))
         # 조건문 작성
         if guess < min_v or guess > max_v:
-            print("범위가 넘어가버렸습니다. 다시 입력해주세요.")
+            print("올바른 범위가 아닙니다. 다시 입력해주세요.")
         elif guess > com:
             print("너무 커요!")
             max_v = guess
@@ -32,11 +32,12 @@ try:
             chance -= 1
             print("남은 기회 :", chance)
         elif guess == com:
-            print(f"정답!! {com}")
-            print(f"점수 : {chance * 10}점")
+            print(f"정답!!")
             break
 
     if (chance == 0):
-        print("\tㅋㅋㅋㅋ 못 맞췄지롱~")
+        print("\tㅋㅋㅋㅋㅋ 못 맞췄지롱~")
+    print(f"정답은 {com}")
+    print(f"점수 : {chance * 10}점")
 except ValueError:
     print("유효한 값이 아닙니다.")

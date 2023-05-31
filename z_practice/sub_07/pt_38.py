@@ -12,7 +12,7 @@ class MoreCalculator(Calculator):
             return self.x / self.y
 
 
-cal = MoreCalculator(2,4)
+cal = MoreCalculator(2, 4)
 print(cal.add())
 print(cal.sub())
 print(cal.mul())
